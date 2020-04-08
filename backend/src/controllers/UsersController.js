@@ -5,7 +5,6 @@ module.exports = {
     async create(req, res) {
         const id = crypto.randomBytes(4).toString('HEX');
         const dataToInsert = { ...req.body, id}
-        console.log(dataToInsert);
         try {
             await connection('users').insert(dataToInsert);
         } catch (error) {
@@ -14,6 +13,8 @@ module.exports = {
         res.sendStatus(200);
     },
     async list(req, res) {
-
+        const users = await connection('users').select('*');
+        console.log('lista:\n', users);
+        res.json(users);
     }
 }
