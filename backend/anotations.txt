@@ -1,0 +1,21 @@
+antes de usar o banco é preciso instalar o knex e o driver do knex 
+
+npm i --save knex 
+
+npm i --save sqlite3
+
+para inicializar o knex:
+
+npx knex init 
+
+esse comando acima criará o comando 
+knexfile.js. Nele ficará as configurações 
+de acesso ao banco para cada ambiente da aplicação (desenvolvimento, produção, staging)
+bem como o arquivo do banco, o banco utilizado e etc.
+
+na pasta migrations há arquivos js relacionados á 
+como as tabelas do banco de dados estão feitas 
+
+para criar migrations usa-se 
+
+npx knex migrate:make "nome_da_migration"
