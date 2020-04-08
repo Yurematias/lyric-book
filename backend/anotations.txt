@@ -19,3 +19,4 @@ como as tabelas do banco de dados estão feitas
 para criar migrations usa-se 
 
 npx knex migrate:make "nome_da_migration"
+npx knex migrate:latest 
