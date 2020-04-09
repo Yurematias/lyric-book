@@ -24,15 +24,15 @@ module.exports = {
 }
 
 async function musicAlreadyExists(music) {
-    let name = await connection('musics')
+    let nameInstance = await connection('musics')
         .where('name', music.name)
         .select('name')
         .first();
 
-    let artist = await connection('musics')
+    let artistInstance = await connection('musics')
         .where('artist', music.artist)
         .select('artist')
         .first();
 
-    return name && artist;
+    return nameInstance && artistInstance;
 }
