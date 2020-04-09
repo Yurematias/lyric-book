@@ -4,9 +4,14 @@ const crypto = require('crypto');
 module.exports = {
     async create(req, res) {
         const id = crypto.randomBytes(4).toString('HEX');
-        const dataToInsert = { ...req.body, id};
-        await connection('musics').insert(dataToInsert); 
-        res.sendStatus(200);
+        const music = { ...req.body, id};
+        if (await musicAlreadyExists(music)) {
+            res.sendStatus(403);
+        } else {
+            await connection('musics').insert(music); 
+            res.sendStatus(200);
+        }
+
     },
     async list(req, res) {
         const musics = await connection('musics').select('*');
@@ -16,4 +21,18 @@ module.exports = {
             res.json(musics);
         }
     }
+}
+
+async function musicAlreadyExists(music) {
+    let name = await connection('musics')
+        .where('name', music.name)
+        .select('name')
+        .first();
+
+    let artist = await connection('musics')
+        .where('artist', music.artist)
+        .select('artist')
+        .first();
+
+    return name && artist;
 }
