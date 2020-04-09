@@ -9,9 +9,9 @@ module.exports = {
             .where('user_id', userId)
             .select('users.name as owner','musics.name as music_name', 'musics.artist', 'musics.lyrics');
         if (musics) {
-            res.json(musics);
+            res.status(200).json(musics);
         } else {
-            res.sendStatus(404);
+            res.status(404);
         }
     }
 }

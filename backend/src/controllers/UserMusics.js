@@ -6,13 +6,13 @@ module.exports = {
         const userId = req.headers.authorization;
 
         if (await musicAlreadyExists(musicId, userId)) {
-            res.sendStatus(403);
+            res.status(403);
         } else {
             await connection('user_musics').insert({ 
                 user_id: userId,
                 music_id: musicId
             });
-            res.sendStatus(200);
+            res.status(200);
         }
     },
     async list(req, res) {

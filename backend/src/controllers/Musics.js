@@ -11,15 +11,15 @@ module.exports = {
             res.status(403).json(musicSearched);
         } else {
             await connection('musics').insert(music); 
-            res.sendStatus(200);
+            res.status(200);
         }
     },
     async list(req, res) {
         const musics = await connection('musics').select('*');
         if (musics) {
-            res.json(musics);
+            res.status(200).json(musics);
         } else {
-            res.sendStatus(404);
+            res.status(404);
         }
     }
 }
