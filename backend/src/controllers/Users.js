@@ -6,14 +6,14 @@ module.exports = {
         const id = crypto.randomBytes(4).toString('HEX'); 
         const dataToInsert = { ...req.body, id};
         await connection('users').insert(dataToInsert);
-        res.sendStatus(200);
+        res.status(200);
     },
     async list(req, res) {
         const users = await connection('users').select('*');
         if (users) {
             res.json(users);
         } else {
-            return res.sendStatus(404);
+            return res.status(404).json({ error: 'No users found' });
         }
     }
 }
