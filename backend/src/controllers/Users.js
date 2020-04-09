@@ -3,7 +3,7 @@ const crypto = require('crypto');
 
 module.exports = {
     async create(req, res) {
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = crypto.randomBytes(4).toString('HEX'); 
         const dataToInsert = { ...req.body, id};
         await connection('users').insert(dataToInsert);
         res.sendStatus(200);

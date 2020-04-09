@@ -1,10 +1,14 @@
 const connection = require('../database/connection');
+const crypto = require('crypto');
 
 module.exports = {
     async create(req, res) {
-        const music = { ...req.body };
-        if (await musicAlreadyExists(music)) {
-            res.sendStatus(403);
+        const id = crypto.randomBytes(4).toString('HEX'); 
+        const music = { ...req.body, id };
+        const musicSearched = await musicAlreadyExists(music);
+
+        if (musicSearched) {
+            res.status(403).json(musicSearched);
         } else {
             await connection('musics').insert(music); 
             res.sendStatus(200);
@@ -21,15 +25,10 @@ module.exports = {
 }
 
 async function musicAlreadyExists(music) {
-    let nameInstance = await connection('musics')
+    const musicId = await connection('musics')
         .where('name', music.name)
-        .select('name')
+        .andWhere('artist', music.artist)
+        .select('id')
         .first();
-
-    let artistInstance = await connection('musics')
-        .where('artist', music.artist)
-        .select('artist')
-        .first();
-
-    return nameInstance && artistInstance;
+    return musicId || false;
 }
