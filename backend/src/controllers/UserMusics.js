@@ -19,7 +19,7 @@ module.exports = {
         const userMusics = await connection('user_musics') 
             .join('users', 'users.id', '=', 'user_musics.user_id')
             .join('musics', 'musics.id', '=', 'user_musics.music_id')
-            .select(['users.name as user_name', 'musics.name as music_name']);
+            .select(['users.name as user_name', 'musics.name as music_name', 'musics.artist']);
 
         if (userMusics) {
             res.json(userMusics);
