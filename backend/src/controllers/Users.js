@@ -10,10 +10,10 @@ module.exports = {
     },
     async list(req, res) {
         const users = await connection('users').select('*');
-        if (!users) {
-            return res.sendStatus(404);
-        } else {
+        if (users) {
             res.json(users);
+        } else {
+            return res.sendStatus(404);
         }
     }
 }
