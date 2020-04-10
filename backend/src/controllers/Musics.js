@@ -11,7 +11,7 @@ module.exports = {
             res.status(403).json(musicSearched);
         } else {
             await connection('musics').insert(music); 
-            res.status(200);
+            res.sendStatus(200);
         }
     },
     async list(req, res) {
@@ -19,7 +19,7 @@ module.exports = {
         if (musics) {
             res.status(200).json(musics);
         } else {
-            res.status(404);
+            res.sendStatus(404);
         }
     }
 }

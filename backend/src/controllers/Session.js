@@ -6,7 +6,7 @@ module.exports = {
         const user = await connection('users')
             .where('password', password)
             .andWhere('email', email)
-            .select('name')
+            .select('name', 'id')
             .first();
         if (user) {
             res.status(200).json(user);

@@ -7,11 +7,11 @@ module.exports = {
             .join('musics', 'musics.id', 'user_musics.music_id')
             .join('users', 'users.id', '=', 'user_musics.user_id')
             .where('user_id', userId)
-            .select('users.name as owner','musics.name as music_name', 'musics.artist', 'musics.lyrics');
+            .select('users.name as owner','musics.name as music_name', 'musics.artist', 'musics.lyrics', 'musics.id');
         if (musics) {
             res.status(200).json(musics);
         } else {
-            res.status(404);
+            res.sendStatus(404);
         }
     }
 }

@@ -6,7 +6,7 @@ module.exports = {
         const id = crypto.randomBytes(4).toString('HEX'); 
         const dataToInsert = { ...req.body, id};
         await connection('users').insert(dataToInsert);
-        res.status(200);
+        res.sendStatus(200);
     },
     async list(req, res) {
         const users = await connection('users').select('*');

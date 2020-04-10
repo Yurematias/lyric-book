@@ -6,13 +6,13 @@ module.exports = {
         const userId = req.headers.authorization;
 
         if (await musicAlreadyExists(musicId, userId)) {
-            res.status(403);
+            res.sendStatus(403);
         } else {
             await connection('user_musics').insert({ 
                 user_id: userId,
                 music_id: musicId
             });
-            res.status(200);
+            res.sendStatus(200);
         }
     },
     async list(req, res) {
@@ -24,7 +24,26 @@ module.exports = {
         if (userMusics) {
             res.json(userMusics);
         } else {
-            res.sendStatus(404);
+            res.status(404).json({ error: 'Does not have any register in the database'});
+        }
+    },
+    async delete(req, res) {
+        const musicId = req.params.music_id;
+        const userId = req.headers.authorization;
+
+        const musicToDelete = await connection('user_musics')
+            .where('music_id', musicId)
+            .andWhere('user_id', userId)
+            .select('*')
+            .first();
+
+        if (musicToDelete) {
+            await connection('user_musics')
+                .where('music_id', musicId)
+                .delete();
+            res.sendStatus(204);
+        } else {
+            res.status(400).json('does not have any music with this parameters');
         }
     }
 };

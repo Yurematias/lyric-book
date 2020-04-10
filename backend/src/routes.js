@@ -14,6 +14,7 @@ routes.post('/musics', MusicsController.create);
 
 routes.get('/user_musics', UserMusicsController.list);
 routes.post('/user_musics', UserMusicsController.create);
+routes.delete('/user_musics:music_id', UserMusicsController.delete);
 
 routes.get('/profile_musics', ProfileController.list);
 
