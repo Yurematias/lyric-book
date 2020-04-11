@@ -1,0 +1,13 @@
+
+#container {
+    font-family: 'Roboto', sans-serif;
+}
+
+#container > #right-div .logo {
+    width: 170px;
+}
+
+#container > #right-div p {
+    padding: 10px 90px 10px 90px;
+    text-align: center;
+}
