@@ -7,7 +7,7 @@ import './css/login.css'
 
 function Login() {
     return (
-        <section className="container"> 
+        <section id="login-container"> 
             <div className="left-div">
                 <div>
                     <Title style={{ fontSize: '92px', fontWeight: 600 }} />
@@ -19,7 +19,7 @@ function Login() {
                 <form action="">
                     <input type="email" name="" id="" placeholder="email"/>
                     <input type="password" name="" id="" placeholder="senha"/>
-                    <button type="submit">confirmar</button>
+                    <button type="submit">Confirmar</button>
                 </form>
             </div>
 

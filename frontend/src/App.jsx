@@ -5,7 +5,9 @@ import Footer from './components/Footer.jsx';
 function App() {
     return (
         <div className="app">
-            <Routes />
+            <React.StrictMode>
+                <Routes />
+            </React.StrictMode>
             <Footer />
         </div>
     )

@@ -1,4 +1,4 @@
-.container {
+#login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,22 +7,21 @@
     background-color: #F8F8F8;
 }
 
-.container > .left-div {
+#login-container > .left-div {
     display: flex;
     flex-direction: column;
 }
 
-.container > .left-div > div {
+#login-container > .left-div > div {
     display: flex;
     flex-direction: column;
 }
 
-
-.container > .left-div > div > p {
+#login-container > .left-div > div > p {
     padding: 0px 10px;
 }
 
-.container > .left-div > form {
+#login-container > .left-div > form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +29,7 @@
     margin: 15px 0px 15px 0px;
 }
 
-.container > .left-div > form > input {
+#login-container > .left-div > form > input {
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
@@ -43,16 +42,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.container > .left-div > form > input:focus {
+#login-container > .left-div > form > input:focus {
     border-color: rgba(0, 0, 0, 0.575);
 }
 
-.container > .left-div > form > * {
+#login-container > .left-div > form > * {
     margin: 5px;
 }
 
-
-.container > .left-div > form > button {
+#login-container > .left-div > form > button {
     border-style: solid;
     border-width: 1px;
     height: 44px;
@@ -66,28 +64,28 @@
     cursor: pointer;
 }
 
-.container > .left-div > form > button:hover {
+#login-container > .left-div > form > button:hover {
     background-color: #253768;
     transition: 0.2s;
 }
 
-.container > .right-div {
+#login-container > .right-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container > .right-div > * {
+#login-container > .right-div > * {
     margin: 10px 0px;
 }
 
-.container > .right-div > p {
+#login-container > .right-div > p {
     max-width: 400px;
     text-align: center;
 }
 
-.container > .right-div > img {
+#login-container > .right-div > img {
     width: 150px;
     opacity: 0.6;
 }
