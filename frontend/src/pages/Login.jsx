@@ -6,31 +6,31 @@ import './css/login.css'
 
 function Login() {
     return (
-        <div className="flex horizontal center" id="container"> 
-            <div className="flex vertical center" id="left-div">
+        <div className="container"> 
+            <div className="left-div">
                 <div>
-                    <Title />
+                    <Title style={{ fontSize: '92px', fontWeight: 600 }} />
                     <p>
                         A Melhor forma de salvar as 
                         letras das suas músicas favoritas
                     </p>
                 </div>
                 <form action="">
-                    <input type="email" name="" id=""/>
-                    <input type="password" name="" id=""/>
+                    <input type="email" name="" id="" placeholder="email"/>
+                    <input type="password" name="" id="" placeholder="senha"/>
                     <button type="submit">confirmar</button>
                 </form>
             </div>
 
-            <div id="right-div" className="flex vertical center">
-                <img src={logo} alt="logo" className="logo centralize-self"/>
-                <p className="centralize-self">
+            <div>
+                <img src={logo} alt="logo" width="130px"/>
+                <p>
                     Faça seu logon e comece 
                     a usufruir de um catálogo com milhares 
                     de letras de músicas
                 </p>
                 <Link>
-                    <div className="flex center">
+                    <div>
                         Não tenho cadastro
                     </div>
                 </Link>

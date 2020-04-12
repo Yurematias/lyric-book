@@ -1,13 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
-#container {
+.container > .left-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > .left-div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container > .left-div > div > p {
+    padding: 0px 10px;
+}
+
+.container > .left-div > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px 15px 0px;
+}
+
+.container > .left-div > form > input {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 44px;
+    width: 90%;
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-color: rgba(0, 0, 0, 0.182);
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
 
-#container > #right-div .logo {
-    width: 170px;
+.container > .left-div > form > input:focus {
+    border-color: rgba(0, 0, 0, 0.575);
 }
 
-#container > #right-div p {
-    padding: 10px 90px 10px 90px;
-    text-align: center;
+.container > .left-div > form > * {
+    margin: 5px;
+}
+
+
+.container > .left-div > form > button {
+    border-style: solid;
+    border-width: 1px;
+    height: 44px;
+    width: 90%;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    background-color: #182445;
+    border-color: rgba(0, 0, 0, 0.182);
+    color: white;
+    cursor: pointer;
+}
+
+.container > .left-div > form > button:hover {
+    background-color: #293556;
+    transition: 0.2s;
+}
+
+.container > .right-div {
+
 }

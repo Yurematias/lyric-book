@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400&display=swap');
 
+body, html, .app, #root {
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
     border: 0;
