@@ -1,24 +1,28 @@
 import React from 'react';
-import './css/footer.css';
+import styles from './css/footer.css.js';
+import { GoMarkGithub } from 'react-icons/go';
+
+const { footer, info, link, year } = styles;
 
 function Footer() {
     return (
-        <footer className="footer"> 
-            <article className="info">
+        <footer style={footer}> 
+            <article style={info}>
                 <div>
                     Desenvolvido por:&nbsp; 
-                    <a href="github.com/yurematias">
+                    <a href="http://github.com/yurematias" style={link}>
                         yurematias
                     </a>
                 </div>
                 <div>
                     Visite o projeto no GitHub:&nbsp;
-                    <a href="github.com/yurematias">
+                    <a href="https://github.com/Yurematias/lyric-book" style={link}>
+                        <GoMarkGithub size="1rem"/>
                         lyric-book
                     </a>
                 </div>
             </article>
-            <article className="year">
+            <article style={year}>
                 2020
             </article>
         </footer>

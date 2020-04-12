@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/lyricbook-icon.png'
 import Title from '../components/Title.jsx';
+import { FiArrowRight } from 'react-icons/fi';
 import './css/login.css'
 
 function Login() {
     return (
-        <div className="container"> 
+        <section className="container"> 
             <div className="left-div">
                 <div>
                     <Title style={{ fontSize: '92px', fontWeight: 600 }} />
@@ -22,8 +23,8 @@ function Login() {
                 </form>
             </div>
 
-            <div>
-                <img src={logo} alt="logo" width="130px"/>
+            <div className="right-div">
+                <img src={logo} alt="logo" />
                 <p>
                     Faça seu logon e comece 
                     a usufruir de um catálogo com milhares 
@@ -31,11 +32,12 @@ function Login() {
                 </p>
                 <Link>
                     <div>
-                        Não tenho cadastro
+                        Não tenho cadastro 
+                        <FiArrowRight size="0.7rem"/>
                     </div>
                 </Link>
             </div>
-        </div>
+        </section>
     );
 }
 
