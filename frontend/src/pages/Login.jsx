@@ -19,7 +19,7 @@ function Login() {
                 <form action="">
                     <input type="email" name="" id="" placeholder="email"/>
                     <input type="password" name="" id="" placeholder="senha"/>
-                    <button type="submit">Confirmar</button>
+                    <button type="submit">Fazer login</button>
                 </form>
             </div>
 

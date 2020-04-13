@@ -16,9 +16,23 @@ function Search() {
                     <button>Buscar</button>
                 </form>
                 <div className="result">
-                    
+                    <h2>Letra encontrada</h2>
+                    <p className="lyric">
+                        Did you stand there all alone?
+                        Oh I cannot explain what's going down
+                        I can see you standing next to me
+                        In and out somewhere else right now
+
+                        You sigh, look away
+                        I can see it clear as day
+                        Close your eyes, so afraid...
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem...
+                    </p>
                 </div>
             </div>
+            <button>
+                voltar
+            </button>
         </section>
     );
 }

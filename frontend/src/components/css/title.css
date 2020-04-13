@@ -1,5 +1,6 @@
 h1.title {
     font-family: 'Righteous', 'Roboto', Helvetica;
+    user-select: none;
 }
 
 h1 > * {
