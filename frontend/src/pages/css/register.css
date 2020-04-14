@@ -1,0 +1,21 @@
+#register-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#register-container > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-container > .logo-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-container > .logo-div > img {
+    width: 150px;
+    opacity: 0.6;
+}
