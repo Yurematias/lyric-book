@@ -18,6 +18,10 @@ body, html, #root {
     padding: 0;
 }
 
+.all-space {
+    height: 100%;
+}
+
 /* FLEX PROPERTIES */
 .flex {
     display: flex;
