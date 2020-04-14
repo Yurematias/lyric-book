@@ -11,12 +11,31 @@
     justify-content: center;
 }
 
+#search-container > button {
+    width: 150px;
+    border-radius: 5px;
+    background-color: #af2215;
+    color: white;
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, 0.182);
+    border-width: 1px;
+    font-size: 18px;
+    align-self: center;
+    padding: 7px;
+}
+
+#search-container > button:hover {
+    background-color: #e22919;
+    transition: 0.4s;
+}
+
 #search-container > .search-div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 #search-container > .search-div > * {
@@ -28,7 +47,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 
 #search-container > .search-div > form > * {
     margin: 5px;
@@ -78,7 +96,6 @@
 #search-container > .search-div > .result > * {
     margin: 5px;
 }
-
 
 #search-container > .search-div > .result > .lyric {
     border-width: 1px;
