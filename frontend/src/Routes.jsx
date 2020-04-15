@@ -5,7 +5,7 @@ import Login from './pages/Login.jsx'
 import Search from './pages/Search.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile.jsx';
-import Music from './pages/Profile.jsx';
+import Music from './pages/Music.jsx';
 
 function Routes() {
     return (

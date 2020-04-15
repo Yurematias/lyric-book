@@ -1,0 +1,79 @@
+#profile-container {
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#profile-container > header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#profile-container > header > .intro-div {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#profile-container > header > .intro-div > .title-div {
+    margin-left: 10px;
+}
+
+#profile-container > header > .intro-div > img {
+    width: 80px;
+}
+
+#profile-container > header > .control-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 40px;
+    width: 400px;
+    align-items: center;
+} 
+
+#profile-container > header > .control-div > button {
+    border-style: solid;
+    border-width: 1px;
+    height: 44px;
+    padding: 7px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.182);
+    cursor: pointer;
+    margin: 0px 5px;
+} 
+
+#profile-container > header > .control-div > button.logout:hover {
+    background-color: #971919;
+    transition: 0.2s;
+    border-color: white;
+}
+
+#profile-container > header > .control-div > button.add-lyric:hover {
+    border-color: white;
+    transition: 0.2s;
+    background-color: #182445;
+}
+
+#profile-container > header > .control-div > button.logout {
+    color: white;
+    border-radius: 50%;
+    height: 47px;
+    width: 47px;
+    background-color: #c72121;
+}
+
+#profile-container > header > .control-div > button.add-lyric {
+    background-color: #21315e;
+    color: white;
+    width: 235px;
+}
