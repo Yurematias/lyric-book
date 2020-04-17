@@ -3,7 +3,6 @@
     background-color: rgb(240, 240, 240);
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 0px 100px;
     font-family: 'Roboto', sans-serif;
 }
@@ -14,6 +13,14 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+}
+
+
+#profile-container > h1 {
+    align-self: left;
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-top: 30px;
 }
 
 #profile-container > header > .intro-div {
@@ -76,4 +83,20 @@
     background-color: #21315e;
     color: white;
     width: 235px;
+}
+
+#profile-container > .musics-div {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#profile-container > .musics-div > .music {
+    width: 218px;
+    height: 218px;
+    margin: 10px 10px;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255);
 }

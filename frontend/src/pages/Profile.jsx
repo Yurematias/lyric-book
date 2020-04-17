@@ -22,6 +22,39 @@ function Profile() {
                     </button>
                 </div>
             </header>
+            <h1>Letras salvas</h1>
+            <div className="musics-div">
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+                <div className="music">
+                    Musica A
+                </div>
+            </div>
         </section>
     )
 }
