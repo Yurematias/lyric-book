@@ -8,7 +8,7 @@ function App() {
             <React.StrictMode>
                 <Routes />
             </React.StrictMode>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

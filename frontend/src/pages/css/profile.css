@@ -1,20 +1,80 @@
 #profile-container {
-    height: 100%;
-    background-color: rgb(240, 240, 240);
     display: flex;
     flex-direction: column;
-    padding: 0px 100px;
     font-family: 'Roboto', sans-serif;
 }
 
-#profile-container > header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
+/* 
+xs (for phones - screens less than 768px wide)
+sm (for tablets - screens equal to or greater than 768px wide)
+md (for small laptops - screens equal to or greater than 992px wide)
+lg (for laptops and desktops - screens equal to or greater than 1200px wide) 
+*/
+
+@media (max-width: 768px) {
+    #profile-container {
+        padding: 5px;
+    }
+    .title, .logo {
+        display: none;
+    }
 }
 
+@media (min-width: 768px) {
+    #profile-container > header {
+        padding: 0px 70px;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    #profile-container > .musics-div {
+        display: flex;
+        padding: 0px 80px;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #profile-container > h1 {
+        padding: 0px 80px;
+    }
+
+    #profile-container > .musics-div > .music {
+        width: 347px;
+        height: 250px;
+        overflow: hidden;
+        margin: 10px 10px;
+        border-color: rgba(0, 0, 0, 0.151);
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255);
+    }
+    #profile-container > .musics-div > .music > .header {
+        display: flex;
+        flex-direction: column;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.11);
+        margin-bottom: 10px;
+    }
+    
+    #profile-container > .musics-div > .music > .header > .artist{
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    
+}
+
+#profile-container > .musics-div > .music:hover {
+    background-color: rgba(200, 200, 255, 0.055);
+    border-color: #182445;
+    transition: 0.2s;
+    cursor: pointer;
+}
 
 #profile-container > h1 {
     align-self: left;
@@ -85,18 +145,3 @@
     width: 235px;
 }
 
-#profile-container > .musics-div {
-    display: flex;
-    width: 90%;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#profile-container > .musics-div > .music {
-    width: 218px;
-    height: 218px;
-    margin: 10px 10px;
-    border-radius: 6px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255);
-}
