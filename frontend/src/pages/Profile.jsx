@@ -4,6 +4,27 @@ import logo from '../assets/lyricbook-icon.png'
 import Title from '../components/Title.jsx';
 import './css/profile.css';
 
+const artistExample = 'Cage the Elephant'
+const musicExample = 'Cigarrete Daydreams'
+const lyricExample = `Did you stand there all alone?
+Oh I cannot explain what's going down
+I can see you standing next to me
+In and out somewhere else right now
+You sigh, look away
+I can see it clear as day
+Close your eyes, so afraid...
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem...
+Did you stand there all alone?
+Oh I cannot explain what's going down
+I can see you standing next to me
+In and out somewhere else right now
+
+You sigh, look away
+I can see it clear as day
+Close your eyes, so afraid...
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem...
+`;
+
 function Profile() {
     return (
         <section id="profile-container">

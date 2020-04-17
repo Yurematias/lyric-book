@@ -4,14 +4,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* 
-xs (for phones - screens less than 768px wide)
-sm (for tablets - screens equal to or greater than 768px wide)
-md (for small laptops - screens equal to or greater than 992px wide)
-lg (for laptops and desktops - screens equal to or greater than 1200px wide) 
-*/
-
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     #profile-container {
         padding: 5px;
     }
@@ -20,7 +13,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     #profile-container > header {
         padding: 0px 70px;
         justify-content: space-between;
@@ -65,13 +58,11 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
         font-weight: bold;
         font-size: 1.1rem;
     }
-
-    
 }
 
 #profile-container > .musics-div > .music:hover {
-    background-color: rgba(200, 200, 255, 0.055);
-    border-color: #182445;
+    background-color: rgba(200, 200, 255, 0.418);
+    border-color: #1824454b;
     transition: 0.2s;
     cursor: pointer;
 }
