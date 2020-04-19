@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/lyricbook-icon.png'
-import Title from '../components/Title.jsx';
+import logo from '../../assets/lyricbook-icon.png'
+import Title from '../../components/Title.jsx';
 import { FiArrowRight } from 'react-icons/fi';
-import './css/login.css'
+import './styles/login.css'
 
 function Login() {
     return (

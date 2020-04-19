@@ -1,8 +1,10 @@
 import React from 'react';
 import { FiPower } from 'react-icons/fi';
-import logo from '../assets/lyricbook-icon.png'
-import Title from '../components/Title.jsx';
-import './css/profile.css';
+import logo from '../../assets/lyricbook-icon.png'
+import Title from '../../components/Title.jsx';
+import './styles/general.css';
+import './styles/desktop.css';
+import './styles/mobile.css';
 
 const artistExample = 'Cage the Elephant'
 const musicExample = 'Cigarrete Daydreams'
@@ -33,7 +35,7 @@ function Profile() {
                     <img src={logo} className="logo"/>
                     <div className="title-div">
                         <div className="title">
-                            <Title style={{fontSize: '60px'}}/>
+                            <Title style={{fontSize: '50px'}}/>
                         </div>
                         <p>Bem vindo. LordYM</p>
                     </div>

@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../assets/lyricbook-icon.png';
-import Title from '../components/Title';
+import logo from '../../assets/lyricbook-icon.png';
+import Title from '../../components/Title';
 import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
-import './css/register.css';
+import './styles/register.css';
 
 function Register() {
     return( 

@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../components/Title';
-import './css/music.css';
+import Title from '../../components/Title';
+import './styles/music.css';
 
 function Music() {
     return (

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Login from './pages/Login.jsx'
-import Search from './pages/Search.jsx';
-import Register from './pages/Register.jsx';
-import Profile from './pages/Profile.jsx';
-import Music from './pages/Music.jsx';
+import Login from './pages/Login/Login.jsx'
+import Search from './pages/Search/Search.jsx';
+import Register from './pages/Register/Register.jsx';
+import Profile from './pages/Profile/Profile.jsx';
+import Music from './pages/Music/Music.jsx';
 
 function Routes() {
     return (
