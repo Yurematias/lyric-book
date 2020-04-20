@@ -6,6 +6,11 @@ body, html, #root {
     background-color: rgb(240, 240, 240);
 }
 
+.max-viewport {
+    /* height: 100%; */
+    /* position: relative; */
+}
+
 .app{
     height: 100%;
     display: flex;

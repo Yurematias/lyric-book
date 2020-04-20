@@ -2,8 +2,8 @@ export default {
     footer: {
         height: '120px',
         width: '100%',
-        bottom: '0px',
         backgroundColor: '#182445',
+        marginTop: '50px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
