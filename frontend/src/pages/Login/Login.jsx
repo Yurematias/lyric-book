@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/lyricbook-icon.png'
 import Title from '../../components/Title.jsx';
 import { FiArrowRight } from 'react-icons/fi';
-import './styles/login.css'
+import './styles/general.css'
+import './styles/mobile.css'
 
 function Login() {
     return (
         <section id="login-container"> 
             <div className="left-div">
                 <div>
-                    <Title style={{ fontSize: '92px', fontWeight: 600 }} />
-                    <p>
+                    <div className="title">
+                        <Title style={{ fontSize: '92px', fontWeight: 600 }} />
+                    </div>
+                    <p className="subtitle">
                         A Melhor forma de salvar as 
                         letras das suas músicas favoritas
                     </p>
