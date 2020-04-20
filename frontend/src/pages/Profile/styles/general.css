@@ -67,8 +67,8 @@
     margin: 0px 5px;
 } 
 
-#profile-container > header > .intro-div > img {
-    width: 80px;
+#profile-container > header > .intro-div > img.logo {
+    width: 70px;
 }
 
 #profile-container > .musics-div > .music:hover {

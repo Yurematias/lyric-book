@@ -1,0 +1,19 @@
+@media (max-width: 880px) {
+    #main-container {
+        justify-content: start;
+    }
+    #register-container {
+        height: initial;   
+    }
+    #register-container > form {
+        width: 100%;
+        align-items: center;
+    }
+    #register-container > .logo-div > img {
+        display: none;
+    }
+    #register-container > form > input, 
+    #register-container > form > button {
+        width: 95%;
+    }
+}

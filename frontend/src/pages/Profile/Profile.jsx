@@ -35,7 +35,7 @@ function Profile() {
                     <img src={logo} className="logo"/>
                     <div className="title-div">
                         <div className="title">
-                            <Title style={{fontSize: '50px'}}/>
+                            <Title style={{fontSize: '45px'}}/>
                         </div>
                         <p>Bem vindo. LordYM</p>
                     </div>

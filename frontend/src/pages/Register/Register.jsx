@@ -3,11 +3,12 @@ import logo from '../../assets/lyricbook-icon.png';
 import Title from '../../components/Title';
 import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
-import './styles/register.css';
+import './styles/general.css';
+import './styles/mobile.css';
 
 function Register() {
     return( 
-        <div className="flex vertical center all-space">
+        <div className="flex vertical center all-space" id="main-container">
             <section id="register-container">
                 <form action="">
                     <h2>Cadastro</h2>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../../components/Title';
-import './styles/search.css';
+import './styles/general.css';
+import './styles/mobile.css';
 
 function Search() {
     return (
