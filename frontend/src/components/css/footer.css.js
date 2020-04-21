@@ -3,7 +3,7 @@ export default {
         height: '120px',
         width: '100%',
         backgroundColor: '#182445',
-        marginTop: '50px',
+        bottom: '0px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',

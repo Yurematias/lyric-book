@@ -1,5 +1,6 @@
 import React from 'react';
 import Routes from './Routes.jsx';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -7,6 +8,7 @@ function App() {
             <React.StrictMode>
                 <Routes />
             </React.StrictMode>
+            <Footer/>
         </div>
     )
 }

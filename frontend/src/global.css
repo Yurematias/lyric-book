@@ -2,13 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400&display=swap');
 
 body, html, #root {
-    height: 100%;
+    min-height: 100%;
     background-color: rgb(240, 240, 240);
-}
-
-.max-viewport {
-    /* height: 100%; */
-    /* position: relative; */
 }
 
 .app{

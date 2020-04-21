@@ -5,6 +5,7 @@
         align-items: center;
         margin: 0px auto;
         width: 57%;
+        min-height: 81vh;
         min-width: 430px;
     }
     #music-container > header {
@@ -25,6 +26,7 @@
     background-color: white;
     padding: 14px;
     margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 6px;
 }
 

@@ -1,6 +1,13 @@
+#main-container {
+    min-height: 81vh;
+}
+
+#main-container > * {
+    margin: 20px;
+}
+
 #register-container {
     display: flex;
-    height: 80%;
     align-items: center;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
@@ -16,6 +23,23 @@
     flex-direction: column;
 }
 
+button.back {
+    width: 150px;
+    border-radius: 5px;
+    background-color: #af2215;
+    color: white;
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, 0.182);
+    border-width: 1px;
+    font-size: 18px;
+    align-self: center;
+    padding: 7px;
+}
+
+button.back:hover {
+    background-color: #e22919;
+    transition: 0.2s;
+}
 
 #register-container > form > * {
     margin: 5px;
