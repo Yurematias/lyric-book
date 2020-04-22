@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../../assets/lyricbook-icon.png'
 import Title from '../../components/Title.jsx';
 import { FiArrowRight } from 'react-icons/fi';
@@ -7,6 +7,13 @@ import './styles/general.css'
 import './styles/mobile.css'
 
 function Login() {
+    
+    const history = useHistory();
+
+    function handleRegisterLink() {
+        history.push('/register');
+    }
+
     return (
         <section id="login-container" className="max-viewport">
             <div className="left-div">
@@ -17,7 +24,7 @@ function Login() {
                     <p className="subtitle">
                         A Melhor forma de salvar as
                         letras das suas músicas favoritas
-                        </p>
+                    </p>
                 </div>
                 <form action="">
                     <input type="email" name="" id="" placeholder="email" />
@@ -34,9 +41,9 @@ function Login() {
                     de letras de músicas
                     </p>
                 <Link>
-                    <div>
+                    <div onClick={handleRegisterLink}>
                         Não tenho cadastro
-                            <FiArrowRight size="0.7rem" />
+                        <FiArrowRight size="0.7rem" />
                     </div>
                 </Link>
             </div>

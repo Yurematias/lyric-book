@@ -1,13 +1,20 @@
 import React from 'react';
 import { FiPower } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 import logo from '../../assets/lyricbook-icon.png'
 import Title from '../../components/Title.jsx';
 import './styles/general.css';
 import './styles/desktop.css';
 import './styles/mobile.css';
-import Footer from './../../components/Footer';
 
 function Profile() {
+
+    const history = useHistory();
+
+    function handleAddLyric() {
+        history.push('/search');
+    }
+
     return (
         <section id="profile-container" className="max-viewport">
             <header>
@@ -21,7 +28,9 @@ function Profile() {
                         </div>
                     </div>
                     <div className="control-div">
-                        <button className="add-lyric">Adicionar letra</button>
+                        <button className="add-lyric" onClick={handleAddLyric}>
+                            Adicionar letra
+                        </button>
                         <button className="logout">
                             <FiPower />
                         </button>

@@ -1,13 +1,20 @@
 import React from 'react';
 import logo from '../../assets/lyricbook-icon.png';
 import Title from '../../components/Title';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 import './styles/general.css';
 import './styles/mobile.css';
 import Footer from './../../components/Footer';
 
 function Register() {
+
+    const history = useHistory();
+
+    function handleBackButton() {
+        history.push('/');
+    }
+
     return (
         <div className="flex vertical center all-space max-viewport" id="main-container">
             <section id="register-container">
@@ -25,10 +32,10 @@ function Register() {
                     <p>
                         Faça seu cadastro e comece a usufruir de um catálogo
                         milhares de músicas para você salvar e disfrutar
-                        </p>
+                    </p>
                 </div>
             </section>
-            <button className="back">
+            <button className="back" onClick={handleBackButton}>
                 voltar
             </button>
         </div>
