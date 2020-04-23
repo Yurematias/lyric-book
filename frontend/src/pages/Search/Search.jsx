@@ -3,7 +3,7 @@ import Title from '../../components/Title';
 import './styles/general.css';
 import './styles/mobile.css';
 import { useHistory } from 'react-router-dom';
-import getMusic from './../../services/lyricAPI';
+import getMusic from '../../services/getMusicFromWebAPI';
 
 function Search() {
 
@@ -28,7 +28,7 @@ function Search() {
                 <Title style={{ fontSize: '72px', fontWeight: 600 }} />
             </div>
             <div className="search-div">
-                <form action="">
+                <form onSubmit={handleSearchButton}>
                     <h2>Busca de música</h2>
                     <input 
                         placeholder="Artista" 
@@ -38,7 +38,7 @@ function Search() {
                         placeholder="Música" 
                         onChange={evt => setMusic(evt.target.value)}    
                     />
-                    <button onClick={handleSearchButton}>
+                    <button type="submit">
                         Buscar
                     </button>
                 </form>

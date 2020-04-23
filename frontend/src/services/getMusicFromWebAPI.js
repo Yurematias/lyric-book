@@ -1,4 +1,4 @@
-async function getMusic(artist, music) {
+async function getMusicFromWebAPI(artist, music) {
     if (!artist || !music) return 'por favor informe o artista e o título da música'
 
     const response = await fetch(`https://api.lyrics.ovh/v1/${artist}/${music}`);
@@ -6,4 +6,4 @@ async function getMusic(artist, music) {
     return result.lyrics ?? 'Não foi possível envontrar uma letra de música com esses parametros';
 }
 
-export default getMusic;
+export default getMusicFromWebAPI;
