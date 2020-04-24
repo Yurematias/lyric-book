@@ -14,17 +14,26 @@ function Profile() {
     const userId = localStorage.getItem('userId');
     const [musics, setMusics] = useState([]);
 
+    useEffect(() => {
+        api.get('profile_musics', {
+            headers: { 
+                Authorization: userId 
+            }
+        }).then(response => {
+            setMusics(response.data);
+        });
+    }, [userId]);
+
     function handleAddLyric() {
         history.push('/search');
     }
 
-    api.get('profile_musics', {
-        headers: { 
-            Authorization: userId 
-        }
-    }).then(response => {
-        setMusics(response.data);
-    });
+    function handleResult(music) {
+        localStorage.setItem('music_name', music.music_name);
+        localStorage.setItem('music_artist', music.artist);
+        localStorage.setItem('music_lyrics', music.lyrics);
+        history.push('/music');
+    }
 
     return (
         <section id="profile-container" className="max-viewport">
@@ -49,9 +58,8 @@ function Profile() {
             </header>
             <h1>Letras salvas</h1>
             <div className="musics-div">
-
                 {musics.map(music => (
-                    <div className="music" key={music.id}>
+                    <div className="music" key={music.id} onClick={() =>  handleResult(music)}>
                         <div className="header">
                             <div className="artist">
                                 {music.artist}

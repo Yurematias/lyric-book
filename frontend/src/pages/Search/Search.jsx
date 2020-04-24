@@ -22,6 +22,13 @@ function Search() {
         setLyric(await getMusic(artist, music));
     }
 
+    function handleResult() {
+        localStorage.setItem('music_name', music);
+        localStorage.setItem('music_artist', artist);
+        localStorage.setItem('music_lyrics', lyric);
+        history.push('/music');
+    }
+
     return (
         <section id="search-container" className="max-viewport">
             <div className="title">
@@ -42,7 +49,7 @@ function Search() {
                         Buscar
                     </button>
                 </form>
-                <div className="result">
+                <div className="result" onClick={handleResult}>
                     <h2>Resultado</h2>
                     <p className="lyric">
                         {lyric || 'insira o artista e o título da música para ver o resultado'}

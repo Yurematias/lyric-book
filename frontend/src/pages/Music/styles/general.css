@@ -1,16 +1,15 @@
-@media (min-width: 500px) {
+@media (min-width: 700px) {
     #music-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0px auto;
         width: 57%;
-        min-height: 81vh;
+        min-height: 83vh;
         min-width: 430px;
     }
     #music-container > header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
         width: 100%;
         margin-top: 10px;
@@ -46,10 +45,12 @@
 
 #music-container > header > div > button.back {
     background-color: #c72121;
+    width: 100px;
 }
 
 #music-container > header > div > button.save {
     background-color: #182445;
+    width: 100px;
 }
 
 #music-container > header > div > button.back:hover {
@@ -69,5 +70,11 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        padding: 0 15px;   
+    }
+    #music-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

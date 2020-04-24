@@ -18,5 +18,6 @@
     }
     #profile-container > .musics-div > .music {
         height: 250px;
+        width: 100%;
     } 
 }
