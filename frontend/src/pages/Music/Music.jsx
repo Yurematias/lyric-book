@@ -18,14 +18,6 @@ function Music() {
         history.push('/search');
     }
 
-    String.prototype.customSplit = function(...separators) {
-        let newString = this;
-        for(let i = 0; i < separators.length; i++) {
-            newString = newString.split(separators[i]).join(',');
-        }
-        return newString.split(',');
-    }
-
     return (
         <section id="music-container" className="max-viewport">
             <Title style={{fontSize: '55px'}} />
