@@ -6,15 +6,24 @@ import { useHistory } from 'react-router-dom';
 function Music() {
 
     const history = useHistory();
-
+    
     const music = {
         artist: localStorage.getItem('music_artist'),
         name: localStorage.getItem('music_name'),
         lyrics: localStorage.getItem('music_lyrics')
     } 
+    console.log(music.lyrics.split('\n'));
 
     function handleBackButton() {
         history.push('/search');
+    }
+
+    String.prototype.customSplit = function(...separators) {
+        let newString = this;
+        for(let i = 0; i < separators.length; i++) {
+            newString = newString.split(separators[i]).join(',');
+        }
+        return newString.split(',');
     }
 
     return (
@@ -28,7 +37,12 @@ function Music() {
                 </div>
             </header>
             <article className="lyric-area">
-               {music.lyrics}
+                {music.lyrics.split('\n').map(el => {
+                    if (el.length === 0) {
+                        return <br/>
+                    }
+                    return el;
+                }).map((item, i) => <p key={i}>{item}</p>)}
             </article>
         </section>
     );
