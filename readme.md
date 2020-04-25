@@ -19,14 +19,14 @@
 <p/>
 
 <div align="center">
-    Tela de Login
+    <h3>Tela de Login</h3>
     <img src="prints/print-login.png">
 </div>
 <div align="center">
-    Tela do Perfil
+    <h3> Tela do Perfil</h3>
     <img src="prints/print-profile.JPG">
 </div>
 <div align="center">
-    Busca de Música
+    <h3>Busca de Música</h3>
     <img src="prints/print-search.png">
 </div>
