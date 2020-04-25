@@ -11,7 +11,9 @@ import api from './../../services/api';
 function Profile() {
 
     const history = useHistory();
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('user_id');
+    const userName = localStorage.getItem('user_name');
+
     const [musics, setMusics] = useState([]);
 
     useEffect(() => {
@@ -32,6 +34,8 @@ function Profile() {
         localStorage.setItem('music_name', music.music_name);
         localStorage.setItem('music_artist', music.artist);
         localStorage.setItem('music_lyrics', music.lyrics);
+        // determina a qual página voltar na página de música
+        localStorage.setItem('page_to_return', '/profile');
         history.push('/music');
     }
 
@@ -44,7 +48,7 @@ function Profile() {
                         <div className="title">
                             <Title style={{fontSize: '45px'}}/>
                         </div>
-                        <p>Bem vindo. {localStorage.getItem('userName')}</p>
+                        <p>Bem vindo {userName}</p>
                     </div>
                 </div>
                 <div className="control-div">

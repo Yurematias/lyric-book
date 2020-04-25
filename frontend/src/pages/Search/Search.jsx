@@ -26,6 +26,9 @@ function Search() {
         localStorage.setItem('music_name', music);
         localStorage.setItem('music_artist', artist);
         localStorage.setItem('music_lyrics', lyric);
+        localStorage.setItem('music_id', music.id);
+        // determina a qual página voltar na página de música
+        localStorage.setItem('page_to_return', '/search');
         history.push('/music');
     }
 

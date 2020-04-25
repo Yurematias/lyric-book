@@ -22,8 +22,8 @@ function Login() {
         try {
             const response = await api.post('sessions', { email, password });
             const userData = response.data;
-            localStorage.setItem('userName', userData.name);
-            localStorage.setItem('userId', userData.id);
+            localStorage.setItem('user_name', userData.name);
+            localStorage.setItem('user_id', userData.id);
             history.push('/profile');
         } catch (error) {
             alert('Não foi possível realizar o login');

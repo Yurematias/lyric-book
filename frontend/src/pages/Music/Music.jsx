@@ -2,34 +2,49 @@ import React from 'react';
 import Title from '../../components/Title';
 import './styles/general.css';
 import { useHistory } from 'react-router-dom';
+import api from './../../services/api';
 
 function Music() {
 
     const history = useHistory();
     
-    const music = {
-        artist: localStorage.getItem('music_artist'),
-        name: localStorage.getItem('music_name'),
-        lyrics: localStorage.getItem('music_lyrics')
-    } 
-    console.log(music.lyrics.split('\n'));
+    const artist = localStorage.getItem('music_artist');
+    const name = localStorage.getItem('music_name');
+    const lyrics = localStorage.getItem('music_lyrics');
+    const musicId = localStorage.getItem('music_id');
 
     function handleBackButton() {
-        history.push('/search');
+        history.push(localStorage.getItem('page_to_return'));
+    }
+
+    async function handleSaveButton() {
+        await api.post('musics', { artist, name, lyrics });
+
+        const musicToInsert = await api.get(`/musics?name=${name}&artist=${artist}`);
+
+        api.post('user_musics', musicToInsert, {
+            headers: {
+                Authorization: localStorage.getItem('user_id')
+            }
+        }).then(() => {
+            alert('musica salva com sucesso');
+        }, () => {
+            alert('não foi possível salvar a música');
+        });
     }
 
     return (
         <section id="music-container" className="max-viewport">
             <Title style={{fontSize: '55px'}} />
             <header>
-                <h2>{music.artist} - {music.name}</h2>
+                <h2>{artist} - {name}</h2>
                 <div>
                     <button className="back" onClick={handleBackButton}>Voltar</button>
-                    <button className="save">Salvar</button>
+                    <button className="save" onClick={handleSaveButton}>Salvar</button>
                 </div>
             </header>
             <article className="lyric-area">
-                {music.lyrics.split('\n').map(el => {
+                {lyrics.split('\n').map(el => {
                     if (el.length === 0) {
                         return <br/>
                     }
