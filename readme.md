@@ -6,7 +6,7 @@
     🎼 Aplicação web para usuários buscarem e salvarem letras de músicas. 
 </p>
 
-<p align="center">
+<p>
     Este projeto foi desenvolvido usando o 
     React e consome músicas da API 
     <a href="https://lyrics.ovh">lyrics.ovh</a>.
@@ -14,7 +14,7 @@
     A aplicação dá aos usuários a opção de criar perfis para salvar suas músicas favoritas em um backend criado com NodeJS, Express, Knex e em um banco de dados SQLite
 </p>
 
-<p align="center">
+<p>
     Este projeto foi Criado unicamente com a finalidade de por em prática conhecimentos frontend e backend JavaScript
 <p/>
 
