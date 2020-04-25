@@ -25,7 +25,7 @@ module.exports = {
         if (musicSearched) {
             res.status(200).json(musicSearched);
         } else {
-            res.status(400).json({ error: 'no music found'} );
+            res.status(400).json({ error: 'no music found'});
         }
     },
     async list(req, res) {
