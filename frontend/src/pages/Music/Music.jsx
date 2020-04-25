@@ -18,19 +18,21 @@ function Music() {
     }
 
     async function handleSaveButton() {
+        
         await api.post('musics', { artist, name, lyrics });
+        
+        const musicToInsert = await api.get(`music?name=${name}&artist=${artist}`);
 
-        const musicToInsert = await api.get(`/musics?name=${name}&artist=${artist}`);
-
-        api.post('user_musics', musicToInsert, {
-            headers: {
-                Authorization: localStorage.getItem('user_id')
-            }
-        }).then(() => {
-            alert('musica salva com sucesso');
-        }, () => {
+        try {
+            api.post('user_musics', { musicId: musicToInsert.data.id }, {
+                headers: {
+                    Authorization: localStorage.getItem('user_id')
+                }
+            })
+            alert('musica salva com sucesso');            
+        } catch (error) {
             alert('não foi possível salvar a música');
-        });
+        }
     }
 
     return (
