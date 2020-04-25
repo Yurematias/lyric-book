@@ -17,6 +17,7 @@
 <p>
     Este projeto foi Criado unicamente com a finalidade de por em prática conhecimentos frontend e backend JavaScript
 <p/>
+<hr>
 
 <div align="center">
     <h3>Tela de Login</h3>
