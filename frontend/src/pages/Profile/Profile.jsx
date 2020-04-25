@@ -30,6 +30,10 @@ function Profile() {
         history.push('/search');
     }
 
+    function handleLogout() {
+        history.push('/');
+    }
+
     function handleResult(music) {
         localStorage.setItem('music_name', music.music_name);
         localStorage.setItem('music_artist', music.artist);
@@ -55,7 +59,7 @@ function Profile() {
                     <button className="add-lyric" onClick={handleAddLyric}>
                         Adicionar letra
                     </button>
-                    <button className="logout">
+                    <button className="logout" onClick={handleLogout}>
                         <FiPower />
                     </button>
                 </div>

@@ -3,15 +3,16 @@ const crypto = require('crypto');
 
 module.exports = {
     async create(req, res) {
-        const id = crypto.randomBytes(4).toString('HEX'); 
-        const music = { ...req.body, id };
+        const id = crypto.randomBytes(4).toString('HEX');
+        const music = {...req.body, id };
         const musicSearched = await musicAlreadyExists(music);
 
         if (musicSearched) {
-            res.status(403).json(musicSearched);
+            // se a música já existir, retornar o id da mesma
+            res.status(200).json(musicSearched);
         } else {
-            await connection('musics').insert(music); 
-            res.sendStatus(200);
+            await connection('musics').insert(music);
+            res.sendStatus(201);
         }
     },
     async search(req, res) {

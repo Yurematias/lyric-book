@@ -2,21 +2,21 @@ const connection = require('../database/connection');
 
 module.exports = {
     async create(req, res) {
-        const musicId = req.body.musicId; 
+        const musicId = req.body.musicId;
         const userId = req.headers.authorization;
 
         if (await musicAlreadyExists(musicId, userId)) {
-            res.sendStatus(403);
+            res.sendStatus(409);
         } else {
-            await connection('user_musics').insert({ 
+            await connection('user_musics').insert({
                 user_id: userId,
                 music_id: musicId
             });
-            res.sendStatus(200);
+            res.sendStatus(201);
         }
     },
     async list(req, res) {
-        const userMusics = await connection('user_musics') 
+        const userMusics = await connection('user_musics')
             .join('users', 'users.id', '=', 'user_musics.user_id')
             .join('musics', 'musics.id', '=', 'user_musics.music_id')
             .select(['users.name as user_name', 'musics.name as music_name', 'musics.artist']);
@@ -24,7 +24,7 @@ module.exports = {
         if (userMusics) {
             res.json(userMusics);
         } else {
-            res.status(404).json({ error: 'Does not have any register in the database'});
+            res.status(404).json({ error: 'Does not have any register in the database' });
         }
     },
     async delete(req, res) {

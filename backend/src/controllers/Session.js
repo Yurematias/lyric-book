@@ -9,7 +9,7 @@ module.exports = {
             .select('name', 'id')
             .first();
         if (user) {
-            res.status(200).json(user);
+            res.status(201).json(user);
         } else {
             res.status(400).json({ error: 'No user found' });
         }
