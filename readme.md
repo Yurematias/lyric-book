@@ -23,10 +23,14 @@
     <h3>Tela de Login</h3>
     <img src="prints/print-login.png">
 </div>
+<hr>
+
 <div align="center">
     <h3> Tela do Perfil</h3>
     <img src="prints/print-profile.JPG">
 </div>
+<hr>
+
 <div align="center">
     <h3>Busca de Música</h3>
     <img src="prints/print-search.png">
