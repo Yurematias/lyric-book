@@ -14,6 +14,20 @@ module.exports = {
             res.sendStatus(200);
         }
     },
+    // busca uma música no bacno de dados e retorna o id caso encontre
+    async search(req, res) {
+        const { artist, name } = req.query;
+        const musicSearched = await connection('musics')
+            .where('artist', artist)
+            .andWhere('name', name)
+            .select('id')
+            .first();
+        if (musicSearched) {
+            res.status(200).json(musicSearched);
+        } else {
+            res.status(400).json({ error: 'no music found'} );
+        }
+    },
     async list(req, res) {
         const musics = await connection('musics').select('*');
         if (musics) {
