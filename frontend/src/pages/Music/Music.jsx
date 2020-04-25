@@ -31,7 +31,8 @@ function Music() {
                     Authorization: localStorage.getItem('user_id')
                 }
             })
-            alert('musica salva com sucesso');            
+            alert('musica salva com sucesso');         
+            history.push('/profile');   
         } catch (error) {
             alert('não foi possível salvar a música');
         }

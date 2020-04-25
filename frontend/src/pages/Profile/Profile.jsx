@@ -73,42 +73,17 @@ function Profile() {
                             </div>
                         </div>
                         <div className="lyric">
-                            {music.lyrics}
+                            {
+                                music.lyrics.split('\n').map(el => {
+                                    if (el.length === 0) {
+                                        return <br/>
+                                    }
+                                    return el;
+                                }).map((item, i) => <p key={i}>{item}</p>)
+                            }
                         </div>
                     </div>
                 ))}
-
-               
-                {/* <div className="music">
-                    <div className="header">
-                        <div className="artist">
-                            Cage the Elephant
-                        </div>
-                        <div className="music">
-                            Come a Little Closer
-                        </div>
-                    </div>
-                    <div className="lyric">
-                        Did you stand there all alone?
-                        Oh I cannot explain what's going down
-                        I can see you standing next to me
-                        In and out somewhere else right now
-
-                        You sigh, look away
-                        I can see it clear as day
-                        Close your eyes, so afraid...
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem...
-                        Did you stand there all alone?
-                        Oh I cannot explain what's going down
-                        I can see you standing next to me
-                        In and out somewhere else right now
-
-                        You sigh, look away
-                        I can see it clear as day
-                        Close your eyes, so afraid...
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem...
-                    </div>
-                </div> */}
             </div>
         </section>
     );
