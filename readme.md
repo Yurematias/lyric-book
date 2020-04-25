@@ -2,7 +2,7 @@
     LyricBook
 </h1>
 
-<p align="center">
+<p>
     🎼 Plataforma para usuários buscarem e salvarem letras de músicas. 
 </p>
 <hr>
