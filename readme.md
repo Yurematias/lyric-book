@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    🎼 Aplicação web para usuários buscarem e salvarem letras de músicas. 
+    🎼 Plataforma para usuários buscarem e salvarem letras de músicas. 
 </p>
 <hr>
 <p>
