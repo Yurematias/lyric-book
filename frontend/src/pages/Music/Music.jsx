@@ -12,9 +12,11 @@ function Music() {
     const name = localStorage.getItem('music_name');
     const lyrics = localStorage.getItem('music_lyrics');
     const musicId = localStorage.getItem('music_id');
+    const pageToReturn = localStorage.getItem('page_to_return');
 
     function handleBackButton() {
-        history.push(localStorage.getItem('page_to_return'));
+        history.push(pageToReturn);
+        history.push();
     }
 
     async function handleSaveButton() {
@@ -35,6 +37,12 @@ function Music() {
         }
     }
 
+    const button = (
+        <button className="save" onClick={handleSaveButton}>
+            Salvar
+        </button>
+    );
+
     return (
         <section id="music-container" className="max-viewport">
             <Title style={{fontSize: '55px'}} />
@@ -42,7 +50,9 @@ function Music() {
                 <h2>{artist} - {name}</h2>
                 <div>
                     <button className="back" onClick={handleBackButton}>Voltar</button>
-                    <button className="save" onClick={handleSaveButton}>Salvar</button>
+                    {    
+                        pageToReturn === '/search' ? button : undefined
+                    }
                 </div>
             </header>
             <article className="lyric-area">
