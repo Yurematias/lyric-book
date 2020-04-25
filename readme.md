@@ -5,7 +5,7 @@
 <p align="center">
     🎼 Aplicação web para usuários buscarem e salvarem letras de músicas. 
 </p>
-
+<hr>
 <p>
     Este projeto foi desenvolvido usando o 
     React e consome músicas da API 
