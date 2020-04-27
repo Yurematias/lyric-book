@@ -1,2 +1,2 @@
 - barrar criação de usuários com emails já cadastrados
-- remover get de busca de id da música pelo nome e pelo artista
+- adicionar botão de deletar música na tela do perfil 
