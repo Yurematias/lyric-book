@@ -1,2 +1,2 @@
-- barrar criação de usuários com emails já cadastrados
 - adicionar botão de deletar música na tela do perfil 
+- printar tela de cadastro
