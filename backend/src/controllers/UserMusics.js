@@ -5,15 +5,7 @@ module.exports = {
         const musicId = req.body.musicId;
         const userId = req.headers.authorization;
 
-        if (!musicId) {
-            console.log('MUSICID UNDEFINED');
-        }
-
-        if (!userId) {
-            console.log('USERID UNDEFINED');
-        }
-
-        if (await musicAlreadyExists(musicId, userId)) {
+        if (await didMusicAlreadyExists(musicId, userId)) {
             res.sendStatus(409);
         } else {
             try {
@@ -61,7 +53,7 @@ module.exports = {
 };
 
 // return true if the user already saved the music
-async function musicAlreadyExists(musicId, userId) {
+async function didMusicAlreadyExists(musicId, userId) {
     const instanceExists = await connection('user_musics')
         .where('music_id', musicId)
         .andWhere('user_id', userId)
