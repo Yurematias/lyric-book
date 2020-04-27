@@ -23,13 +23,22 @@ function Music() {
 
         let musicToInsert;
 
+        // inserir a música no banco na tabela músicas, se ouver conflito
+        // é porque a música já existe, mas mesmo assim a execução pode continuar
         try {
-            musicToInsert = await api.post('musics', { artist, name, lyrics });
+            await api.post('musics', { artist, name, lyrics });
+        } catch (error) {}
+
+        // resgatar o id da música para inserir no perfil do usuário  
+        try {
+            musicToInsert = await api.get(`music?name=${name}&artist=${artist}`);
             console.log(musicToInsert);
         } catch (error) {
-            console.log('música já existe no banco, seguindo execução');
+            alert('não foi possível salvar a música');
+            return;
         }
 
+        // inserir no perfil do usuário
         try {
             await api.post('user_musics', { musicId: musicToInsert.data.id }, {
                 headers: {

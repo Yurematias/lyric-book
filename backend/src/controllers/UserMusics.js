@@ -5,14 +5,26 @@ module.exports = {
         const musicId = req.body.musicId;
         const userId = req.headers.authorization;
 
+        if (!musicId) {
+            console.log('MUSICID UNDEFINED');
+        }
+
+        if (!userId) {
+            console.log('USERID UNDEFINED');
+        }
+
         if (await musicAlreadyExists(musicId, userId)) {
             res.sendStatus(409);
         } else {
-            await connection('user_musics').insert({
-                user_id: userId,
-                music_id: musicId
-            });
-            res.sendStatus(201);
+            try {
+                await connection('user_musics').insert({
+                    user_id: userId,
+                    music_id: musicId
+                });
+                res.sendStatus(201);
+            } catch (error) {
+                res.sendStatus(400);
+            }
         }
     },
     async list(req, res) {

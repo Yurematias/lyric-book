@@ -10,6 +10,7 @@ routes.get('/users', UsersController.list);
 routes.post('/users', UsersController.create);
 
 routes.get('/musics', MusicsController.list);
+routes.get('/music', MusicsController.search);
 routes.post('/musics', MusicsController.create);
 
 routes.get('/user_musics', UserMusicsController.list);
