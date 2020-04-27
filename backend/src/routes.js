@@ -9,7 +9,6 @@ const SessionController = require('./controllers/Session');
 routes.get('/users', UsersController.list);
 routes.post('/users', UsersController.create);
 
-routes.get('/music', MusicsController.search);
 routes.get('/musics', MusicsController.list);
 routes.post('/musics', MusicsController.create);
 

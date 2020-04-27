@@ -15,21 +15,6 @@ module.exports = {
             res.sendStatus(201);
         }
     },
-    async search(req, res) {
-        const { name, artist } = req.query;
-
-        const response = await connection('musics')
-            .where('name', name)
-            .andWhere('artist', artist)
-            .select('id')
-            .first();
-
-        if (response) {
-            res.status(200).json(response);
-        } else {
-            res.status(400).json({ error: 'no music found' });
-        }
-    },
     async list(req, res) {
         const musics = await connection('musics').select('*');
         if (musics) {
@@ -39,7 +24,6 @@ module.exports = {
         }
     }
 }
-
 async function musicAlreadyExists(music) {
     const musicId = await connection('musics')
         .where('name', music.name)
