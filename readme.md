@@ -35,6 +35,7 @@
     <h3>Busca de Música</h3>
     <img src="prints/print-search.png">
 </div>
+<hr>
 
 <div align="center">
     <h3>Visualização da Letra</h3>
