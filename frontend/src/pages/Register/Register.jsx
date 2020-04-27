@@ -34,7 +34,8 @@ function Register() {
             alert('usuário cadastrado com sucesso');
             history.push('');
         } catch (error) {
-            alert('Não foi possível cadastrar o usuário');
+            console.log(error);
+            alert('Já existe um usuário com este email');
         }
     }
 
