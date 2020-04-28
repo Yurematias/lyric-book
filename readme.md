@@ -41,3 +41,10 @@
     <h3>Visualização da Letra</h3>
     <img src="prints/print-music-lyric.png">
 </div>
+<hr>
+
+<div align="center">
+    <h3>Tela de Cadastro</h3>
+    <img src="prints/print-register.png">
+</div>
+

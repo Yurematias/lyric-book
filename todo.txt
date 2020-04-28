@@ -1,2 +1,0 @@
-- adicionar botão de deletar música na tela do perfil 
-- printar tela de cadastro
