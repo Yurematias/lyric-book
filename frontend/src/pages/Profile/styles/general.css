@@ -42,16 +42,33 @@
     background-color: rgba(255, 255, 255);
 }
 
+
 #profile-container > .musics-div > .music > .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.11);
     margin-bottom: 10px;
 }
 
-#profile-container > .musics-div > .music > .header > .artist{
+#profile-container > .musics-div > .music > .header > .trash-bin{
+    display: flex;
+    align-items: center;
+}
+
+#profile-container > .musics-div > .music > .header > .trash-bin:hover{
+    transform: scale(1.15);
+    filter: brightness(60%);
+}
+
+#profile-container > .musics-div > .music > .header > .info {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile-container > .musics-div > .music > .header > .info > .artist{
     font-weight: bold;
     font-size: 1.1rem;
 }

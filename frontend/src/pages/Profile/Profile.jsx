@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiPower } from 'react-icons/fi';
+import { FiPower, FiTrash2 } from 'react-icons/fi';
 import { useHistory } from 'react-router-dom';
 import logo from '../../assets/lyricbook-icon.png'
 import Title from '../../components/Title.jsx';
@@ -43,6 +43,20 @@ function Profile() {
         history.push('/music');
     }
 
+    async function handleDeleteMusic(event, musicId) {
+        event.stopPropagation();
+        try {
+            await api.delete(`user_musics${musicId}`, {
+                headers: {
+                    Authorization: userId
+                }
+            });
+            setMusics(musics.filter(music => music.id !== musicId));
+        } catch (error) {   
+            alert('Não foi possível deletar a música');
+        }
+    }
+
     return (
         <section id="profile-container" className="max-viewport">
             <header>
@@ -69,11 +83,16 @@ function Profile() {
                 {musics.map(music => (
                     <div className="music" key={music.id} onClick={() =>  handleResult(music)}>
                         <div className="header">
-                            <div className="artist">
-                                {music.artist}
+                            <div className="info">
+                                <div className="artist">
+                                    {music.artist}
+                                </div>
+                                <div className="music">
+                                    {music.music_name}
+                                </div>
                             </div>
-                            <div className="music">
-                                {music.music_name}
+                            <div className="trash-bin" onClick={event => handleDeleteMusic(event, music.id)}>
+                                <FiTrash2 size="1.5rem" color="#CC444477" />
                             </div>
                         </div>
                         <div className="lyric">
