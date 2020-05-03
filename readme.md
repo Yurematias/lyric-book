@@ -21,30 +21,30 @@
 
 <div align="center">
     <h3>Tela de Login</h3>
-    <img src="prints/print-login.png">
+    <img src="screenshots/print-login.png">
 </div>
 <hr>
 
 <div align="center">
     <h3> Tela do Perfil</h3>
-    <img src="prints/print-profile.JPG">
+    <img src="screenshots/print-profile.JPG">
 </div>
 <hr>
 
 <div align="center">
     <h3>Busca de Música</h3>
-    <img src="prints/print-search.png">
+    <img src="screenshots/print-search.png">
 </div>
 <hr>
 
 <div align="center">
     <h3>Visualização da Letra</h3>
-    <img src="prints/print-music-lyric.png">
+    <img src="screenshots/print-music-lyric.png">
 </div>
 <hr>
 
 <div align="center">
     <h3>Tela de Cadastro</h3>
-    <img src="prints/print-register.png">
+    <img src="screenshots/print-register.png">
 </div>
 
