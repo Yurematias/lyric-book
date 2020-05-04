@@ -1,7 +1,8 @@
 const crypto = require('crypto');
 const KnexUserHandler = require('../database/handlers/knexHandlers/KnexUserHandler');
+const connection = require('../database/connection');
 
-const databaseHandler = new KnexUserHandler(); 
+const databaseHandler = new KnexUserHandler(connection); 
 
 module.exports = {
     async create(req, res) {

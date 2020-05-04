@@ -1,7 +1,8 @@
 const crypto = require('crypto');
 const KnexMusicHandler = require('../database/handlers/knexHandlers/KnexMusicHandler');
+const connection = require('../database/connection');
 
-const databaseHandler = new KnexMusicHandler();
+const databaseHandler = new KnexMusicHandler(connection);
 
 module.exports = {
     async create(req, res) {

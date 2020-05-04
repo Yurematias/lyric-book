@@ -1,5 +1,6 @@
 module.exports = class AbstractUserHandler {
-    insert(user) {}
-    selectAll() {}
-    selectUserByEmail(email) {}
+    async insert(user) {}
+    async selectAll() {}
+    async selectUserByEmail(email) {}
+    async selectUser(password, email) {}
 }

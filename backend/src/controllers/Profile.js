@@ -1,13 +1,11 @@
 const connection = require('../database/connection');
+const KnexUserMusicsHandler = require('../database/handlers/knexHandlers/KnexUserMusicsHandler');
 
+const databaseHandler = new KnexUserMusicsHandler(connection);
 module.exports = {
     async list(req, res) {
         const userId = req.headers.authorization;
-        const musics = await connection('user_musics')
-            .join('musics', 'musics.id', 'user_musics.music_id')
-            .join('users', 'users.id', '=', 'user_musics.user_id')
-            .where('user_id', userId)
-            .select('users.name as owner','musics.name as music_name', 'musics.artist', 'musics.lyrics', 'musics.id');
+        const musics = await databaseHandler.selectMusicsFromUser(userId);
         if (musics) {
             res.status(200).json(musics);
         } else {

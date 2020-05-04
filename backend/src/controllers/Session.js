@@ -1,13 +1,11 @@
+const KnexUserHandler = require('../database/handlers/knexHandlers/KnexUserHandler');
 const connection = require('../database/connection');
+const databaseHandler = new KnexUserHandler(connection);
 
 module.exports = {
     async create(req, res) {
         const { password, email } = req.body;
-        const user = await connection('users')
-            .where('password', password)
-            .andWhere('email', email)
-            .select('name', 'id')
-            .first();
+        const user = await databaseHandler.selectUser(password, email);
         if (user) {
             res.status(201).json(user);
         } else {
