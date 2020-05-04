@@ -1,5 +1,7 @@
-const connection = require('../database/connection');
 const crypto = require('crypto');
+const KnexMusicHandler = require('../database/handlers/knexHandlers/KnexMusicHandler');
+
+const databaseHandler = new KnexMusicHandler();
 
 module.exports = {
     async create(req, res) {
@@ -10,27 +12,21 @@ module.exports = {
         if (musicSearched) {
             res.sendStatus(409);
         } else {
-            await connection('musics').insert(music);
+            await databaseHandler.insert(music);
             res.sendStatus(201);
         }
     },
     async search(req, res) {
         const { name, artist } = req.query;
-
-        const response = await connection('musics')
-            .where('name', name)
-            .andWhere('artist', artist)
-            .select('id')
-            .first();
-
-        if (response) {
+        try {
+            const response = await databaseHandler.selectId(name, artist);
             res.status(200).json(response);
-        } else {
+        } catch (error) {
             res.status(400).json({ error: 'no music found' });
         }
     },
     async list(req, res) {
-        const musics = await connection('musics').select('*');
+        const musics = await databaseHandler.selectAll();
         if (musics) {
             res.status(200).json(musics);
         } else {
@@ -39,10 +35,6 @@ module.exports = {
     }
 }
 async function musicAlreadyExists(music) {
-    const musicId = await connection('musics')
-        .where('name', music.name)
-        .andWhere('artist', music.artist)
-        .select('id')
-        .first();
+    const musicId = await databaseHandler.selectId(music.name, music.artist);
     return musicId || false;
 }

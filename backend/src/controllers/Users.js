@@ -1,5 +1,7 @@
-const connection = require('../database/connection');
 const crypto = require('crypto');
+const KnexUserHandler = require('../database/handlers/knexHandlers/KnexUserHandler');
+
+const databaseHandler = new KnexUserHandler(); 
 
 module.exports = {
     async create(req, res) {
@@ -11,7 +13,7 @@ module.exports = {
             console.log('o usuário com este email já existe no banco');
         } else {
             try {
-                await connection('users').insert(dataToInsert);
+                await databaseHandler.insert(dataToInsert);
                 res.sendStatus(201);
             } catch (error) {
                 console.log('erro ao inserir o usuário no banco de dados');
@@ -19,7 +21,7 @@ module.exports = {
         }
     },
     async list(req, res) {
-        const users = await connection('users').select('*');
+        const users = await databaseHandler.selectAll();
         if (users) {
             res.json(users);
         } else {
@@ -31,10 +33,7 @@ module.exports = {
 async function didUserAlreadyExists(email) {
     let response;
     try {
-        response = await connection('users')
-            .where('email', email)
-            .select('*')
-            .first();
+        response = await databaseHandler.selectUserByEmail(email);
     } catch (error) {}
     return response;
 }

@@ -1,3 +1,5 @@
-export default class AbstractUserHandler {
-    
+module.exports = class AbstractUserHandler {
+    insert(user) {}
+    selectAll() {}
+    selectUserByEmail(email) {}
 }
