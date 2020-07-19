@@ -28,6 +28,8 @@ module.exports = {
     },
     async list(req, res) {
         const musics = await databaseHandler.selectAll();
+        res.header('Access-Control-Expose-Headers', 'X-Total-Count');
+        res.set("x-total-count", 5);
         if (musics) {
             res.status(200).json(musics);
         } else {

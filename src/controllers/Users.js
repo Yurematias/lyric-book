@@ -23,8 +23,10 @@ module.exports = {
     },
     async list(req, res) {
         const users = await databaseHandler.selectAll();
+        res.header('Access-Control-Expose-Headers', 'X-Total-Count')
+        res.set("x-total-count", 5);
         if (users) {
-            res.json(users);
+            return res.json(users);
         } else {
             return res.status(404).json({ error: 'No users found' });
         }
