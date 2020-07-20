@@ -1,0 +1,21 @@
+@media (max-width: 860px) {
+    #login-container  {
+        height: initial;
+    }
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+    .black, .blue {
+        font-size: 60px !important;
+    }
+    p.subtitle {
+        text-align: center;
+    }
+    #login-container > .left-div {
+        width: 100%;
+    }
+    #login-container > .right-div > img, #login-container > .right-div > p{
+        display: none;
+    }
+}
